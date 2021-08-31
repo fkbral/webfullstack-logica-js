@@ -47,15 +47,14 @@ function imprimeDadosDoAluno(aluno) {
 function deletaAluno(alunos, indiceEncontrado) {
   if (indiceEncontrado){
     alunos.splice(indiceEncontrado, 1)
-    console.log("Aluno deletado com sucesso!")
+    return console.log("Aluno deletado com sucesso!")
   }
-  else {
-    console.log("Aluno não cadastrado")
-  }
+  
+  return console.log("Aluno não cadastrado")
 }
 
 while(desejaContinuar){
-  const opcao = parseInt(prompt("Entre com uma opcao: "))
+  const opcao = parseInt(prompt("Entre com uma opção: "))
 
   if (opcao === 1) {
     cadastraAluno(alunos)
@@ -63,12 +62,12 @@ while(desejaContinuar){
 
   if (opcao === 2) {
     const pesquisa = pesquisaAluno(alunos)
-    imprimeDadosDoAluno(pesquisa.dadosAluno)  
+    imprimeDadosDoAluno(pesquisa.dadosAluno) 
   }
 
   if (opcao === 3) {
     const pesquisa = pesquisaAluno(alunos)
-    imprimeDadosDoAluno(pesquisa.dadosAluno)  
+    imprimeDadosDoAluno(pesquisa.dadosAluno) 
     deletaAluno(alunos, pesquisa.indiceAluno)
   }
 
