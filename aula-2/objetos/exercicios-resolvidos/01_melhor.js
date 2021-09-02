@@ -30,6 +30,12 @@ function pesquisaAluno(alunos) {
     }
   }
 
+  // Maneira longa de declarar propriedades de um objeto
+  // return {
+  //   dadosAluno: dadosAluno,
+  //   indiceAluno: indiceAluno
+  // }
+
   return {
     dadosAluno,
     indiceAluno
