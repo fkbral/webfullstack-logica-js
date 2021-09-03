@@ -34,11 +34,19 @@ for (nomeDaPessoa of nomeDasPessoas) {
 
   const ocorrencia = ocorrenciaDeSobrenomes[sobrenome]
 
-  // ocorrenciaDeSobrenomes["Peres"] = 
+  ocorrenciaDeSobrenomes["Peres"] = 
   ocorrenciaDeSobrenomes[sobrenome] = 
   ocorrencia 
   ? ocorrencia + 1
   : 1
+
+  // sintaxe equivalente com if/else
+  // if (ocorrenciaDeSobrenomes[sobrenome]) {
+  //   ocorrenciaDeSobrenomes[sobrenome] = ocorrencia + 1
+  // }
+  // else {
+  //   ocorrenciaDeSobrenomes[sobrenome] = 1
+  // }
 }
 
 console.log(ocorrenciaDeSobrenomes)
