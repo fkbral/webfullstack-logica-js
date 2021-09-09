@@ -3,10 +3,18 @@ const acertos = 5
 const quantidadePorCartela = 10
 
 const cartelas = Array.from({ length: 3 }, () => {
-  const numerosApostados = Array.from(
-    {length: quantidadePorCartela},
+  const numerosApostados = []
+
+  Array.from(
+    { length: quantidadePorCartela },
     () => {
-      const numeroSorteado = Math.round(Math.random() * numerosPossiveis + 1)
+      let numeroSorteado = Math.floor(Math.random() * numerosPossiveis + 1)
+
+      while (numerosApostados.includes(numeroSorteado)) {
+        numeroSorteado = Math.round(Math.random() * numerosPossiveis + 1)
+      }
+
+      numerosApostados.push(numeroSorteado)
 
       return numeroSorteado
     })
@@ -16,8 +24,16 @@ const cartelas = Array.from({ length: 3 }, () => {
   return numerosApostados
 })
 
+const numerosSorteados = []
+
 const resultado = Array.from({ length: acertos}, () => {
-  const numeroSorteado = Math.round(Math.random() * numerosPossiveis + 1)
+  let numeroSorteado = Math.floor(Math.random() * numerosPossiveis + 1)
+
+  while (numerosSorteados.includes(numeroSorteado)) {
+    numeroSorteado = Math.round(Math.random() * numerosPossiveis + 1)
+  }
+
+  numerosSorteados.push(numeroSorteado)
 
   return numeroSorteado
 })
