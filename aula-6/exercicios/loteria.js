@@ -1,18 +1,21 @@
 const numerosPossiveis = 30
-const acertos = 5
+const acertosParaGanhar = 5
 const quantidadePorCartela = 10
 
-const cartelas = Array.from({ length: 3 }, () => {
+const cartelas = Array.from({ length: 1000 }, () => {
   const numerosApostados = []
 
   Array.from(
-    { length: quantidadePorCartela },
+    { 
+      length: quantidadePorCartela 
+    },
     () => {
-      let numeroSorteado = Math.floor(Math.random() * numerosPossiveis + 1)
+      let numeroSorteado
 
-      while (numerosApostados.includes(numeroSorteado)) {
-        numeroSorteado = Math.round(Math.random() * numerosPossiveis + 1)
-      }
+      do {
+        numeroSorteado =
+        Math.floor(Math.random() * numerosPossiveis + 1)
+      } while (numerosApostados.includes(numeroSorteado))
 
       numerosApostados.push(numeroSorteado)
 
@@ -20,23 +23,60 @@ const cartelas = Array.from({ length: 3 }, () => {
     })
   
 
-  console.log(numerosApostados)
   return numerosApostados
 })
 
 const numerosSorteados = []
 
-const resultado = Array.from({ length: acertos}, () => {
-  let numeroSorteado = Math.floor(Math.random() * numerosPossiveis + 1)
+Array.from({ length: acertosParaGanhar }, () => {
+  let numeroSorteado
 
-  while (numerosSorteados.includes(numeroSorteado)) {
+  do {
     numeroSorteado = Math.round(Math.random() * numerosPossiveis + 1)
-  }
+  } while (numerosSorteados.includes(numeroSorteado))
 
   numerosSorteados.push(numeroSorteado)
 
   return numeroSorteado
 })
 
-console.log(cartelas)
-console.log(resultado)
+// modificar as minhas cartelas para que cada cartela
+// não seja mais um array, mas sim um objeto com duas 
+// propriedades: 
+// vencedor: boolean
+// numeros: number[]
+
+const objetoDeCartelas = cartelas.map(numerosDaCartela => {
+  let venceu = false
+  let acertos = 0
+
+  numerosSorteados.forEach(numeroSorteado => {
+    const acertou = numerosDaCartela.includes(numeroSorteado)
+
+    acertos = acertou ? acertos + 1 : acertos
+  })
+
+  if(acertos >= acertosParaGanhar){
+    venceu = true
+  }
+
+  return {
+    apostas: numerosDaCartela,
+    venceu: venceu,
+  }
+})
+
+console.log(numerosSorteados)
+
+function mostraVencedores(cartelas) {
+  cartelas.forEach(cartela => {
+    if (cartela.venceu){
+      console.log("Vencedor encontrado com a seguinte cartela: ")
+      console.log(cartela.apostas)
+      console.log("==========================================")
+    }
+  })
+}
+
+mostraVencedores(objetoDeCartelas)
+
