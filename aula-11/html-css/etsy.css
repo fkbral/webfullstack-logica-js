@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  padding: 12px 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(34, 34, 34);
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+}
+
+a, button {
+  border: none;
+  cursor: pointer;
+}
+
+.form-container {
+  flex: 1;
+  border: 2px solid #222;
+  border-radius: 96px;
+  padding: 0 18px;
+  margin: 0 10px;
+  /* background-color: ; */
+  background-color: rgba(34, 34, 34, 0.05);
+
+
+  display: flex;
+}
+
+form {
+  background-color: transparent;
+  flex: 1;
+
+  display: flex;
+}
+
+form input {
+  height: 44px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  flex: 1;
+}
+
+form input::placeholder {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+form button {
+  padding: 12px;
+  border: none;
+}
+
+form button i {
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.header-btn {
+  border: none;
+  border-radius: 96px;
+  padding: 2px 12px;
+  height: 36px;
+  font-weight: 600;
+
+  background-color: transparent;
+  
+  transition: .1s ease-in-out;
+}
+
+main .hero-section {
+  /* position: relative; */
+  z-index: 1;
+}
+
+main .hero-section ul {
+  list-style: none;
+}
+
+main .hero-section::before {
+  z-index: -1;
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: rgb(253, 235, 210);
+
+}
+
+.header-btn:hover {
+  background-color: rgba(34, 34, 34, 0.05);
+}
