@@ -45,6 +45,7 @@ h1 {
   font-size: 48px;
   color: #000;
   text-align: center;
+  letter-spacing: -1px;
 }
 
 h2 {
@@ -162,7 +163,7 @@ main .hero-section ul {
   justify-content: space-between;
 }
 
-main .hero-section li, main .hero-section li img {
+main .hero-section li, main .hero-section li a > div {
   transition: .1s ease-in-out;
 }
 
@@ -200,6 +201,10 @@ main .hero-section li:hover > a > div {
 }
 
 main .hero-section li:hover p {
+  color: #444;
+}
+
+main .hero-section li:hover p {
   border-bottom: 2px solid #444;
 }
 
@@ -220,7 +225,7 @@ main .hero-section li img {
   max-width: 114px;
 }
 
-main .hero-section li img + p {
+main .hero-section li div + p {
   margin: 12px 0;
   padding: 0 0 6px;
   width: 100%;
