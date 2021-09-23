@@ -1,3 +1,7 @@
+:root {
+  --padding-vertical-h1: 32px
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +9,42 @@
 }
 
 body {
+  max-width: 1200px;
   width: 100%;
   padding: 12px 36px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: rgb(34, 34, 34);
+
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+@media print {
+  img {
+    display: none;
+  }
+
+  header img {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 80vw;
+  }
 }
 
 h1 {
   font-family: 'Roboto Slab', serif;
-  font-weight: 400;
-  color: rgb(34, 34, 34);
+  font-weight: 300;
+  font-size: 48px;
+  color: #000;
+  text-align: center;
 }
 
 h2 {
@@ -73,10 +102,36 @@ form button i {
 }
 
 header {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   flex: 1;
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > nav > ul {
+  padding: 15px 0 11px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > nav > ul > li {
+  max-width: 88px;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 18px;
+}
+
+header > nav > ul > li > a{
+  text-decoration: none;
+  color: #333;
 }
 
 .header-btn {
@@ -96,8 +151,81 @@ main .hero-section {
   z-index: 1;
 }
 
+main .hero-section h1 {
+  padding: var(--padding-vertical-h1) 0;
+}
+
 main .hero-section ul {
   list-style: none;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+main .hero-section li, main .hero-section li img {
+  transition: .1s ease-in-out;
+}
+
+main .hero-section li > a > div  {
+  display: flex;
+  border-radius: 50%;
+
+  position: relative;
+}
+
+/* main .hero-section li > a > div::before {
+  content: 'olá'
+} */
+
+main .hero-section li > a > div::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  
+  display: flex;
+  box-shadow: 0 4px 18px rgb(34 34 34 / 15%);
+  opacity: 0;
+}
+
+main .hero-section li:hover > a > div::after { 
+  opacity: 1;
+}
+
+main .hero-section li:hover > a > div {
+  transform: scale(1.1);
+}
+
+main .hero-section li:hover p {
+  border-bottom: 2px solid #444;
+}
+
+main .hero-section li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .hero-section li img {
+  border-radius: 50%;
+  max-height: 114px;
+  max-width: 114px;
+}
+
+main .hero-section li img + p {
+  margin: 12px 0;
+  padding: 0 0 6px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid transparent;
 }
 
 main .hero-section::before {
@@ -107,7 +235,7 @@ main .hero-section::before {
   position: absolute;
   left: 0;
   right: 0;
-  height: 100px;
+  height: calc(242px + var(--padding-vertical-h1));
   background-color: rgb(253, 235, 210);
 
 }
