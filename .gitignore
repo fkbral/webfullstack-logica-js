@@ -1,1 +1,4 @@
 .editorconfig
+aula-13/bibliotecas/**/node_modules
+aula-13/bibliotecas/**/dist
+aula-13/bibliotecas/**/.cache
