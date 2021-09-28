@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-  <style>
-    video {
-      pointer-events: none;
-    }
-  </style>
-</head>
-<body>
+    <style>
+      video {
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function onVideoError(number) {
+        console.log("erro ao carregar vídeo " + number);
+      }
+    </script>
 
-  <script>
-    function onVideoError(){
-      document.write('Erro de carregamento')
-      console.log('erro')
-    }
-  </script>
-  
-  <video 
-    src="https://storage.coverr.co/videos/roV63aBLokbum3ifl0100PVmdFSByoFPYD?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzU0NjI0fQ.GOsfx0ruPAudkwvOFPjy8En-eBBavRQ8YRQnW_eWYKs"
-    width="500px"
-    autoplay
-    muted
-    loop
-  >
-  </video>
-
-  <video 
-    width="500px"
-    autoplay
-    muted
-    loop
-  >
-    <source
-      src="https://storage.coverr.co/videos/jrs4M4LAJ301mTeAkE2nzqVTDdn02s7V5J?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzQwOTMzfQ.EgnC_ONGnYzS31WLNUY9HlgkGbAPscNw06mHYgtOMyY"
-    >
-    <source
-      src="https://storage.coverr.co/videos/uVNvXU3yxQEUpdWR3jtp2QmFKT8ZRN00x?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzM4NTEzfQ.PgpCmZntiBAUicxtlEKEf0BgRyuMireA5xSkpKrz9Hs"
-    >
-    <source
+    <video
       src="https://storage.coverr.co/videos/roV63aBLokbum3ifl0100PVmdFSByoFPYD?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzU0NjI0fQ.GOsfx0ruPAudkwvOFPjy8En-eBBavRQ8YRQnW_eWYKs"
-    >
-  </video>
-</body>
+      width="500px"
+      autoplay
+      muted
+      loop
+      onerror="onVideoError(1)"
+    ></video>
+
+    <video width="500px" autoplay muted loop>
+      <source
+        src="https://storage.coverr.co/videos/jrs4M4LAJ301mTeAkE2nzqVTDdn02s7V5J?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzQwOTMzfQ.EgnC_ONGnYzS31WLNUY9HlgkGbAPscNw06mHYgtOMyY"
+      />
+      <source
+        src="https://storage.coverr.co/videos/uVNvXU3yxQEUpdWR3jtp2QmFKT8ZRN00x?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzM4NTEzfQ.PgpCmZntiBAUicxtlEKEf0BgRyuMireA5xSkpKrz9Hs"
+      />
+      <source
+        src="https://storage.coverr.co/videos/roV63aBLokbum3ifl0100PVmdFSByoFPYD?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjMyMzU0NjI0fQ.GOsfx0ruPAudkwvOFPjy8En-eBBavRQ8YRQnW_eWYKs"
+        onerror="onVideoError(2)"
+      />
+    </video>
+  </body>
 </html>

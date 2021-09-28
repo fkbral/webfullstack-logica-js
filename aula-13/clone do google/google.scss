@@ -1,6 +1,14 @@
 :root {
   --padding-horizontal: 30px;
   --padding-vertical: 18px;
+
+  // light
+  --background-color: white;
+  --button-background-color: #f8f9fa;
+  --font-color: rgb(32, 33, 36);
+  --border-color: #dadce0;
+  --border-input-color: #dfe1e5;
+  --footer-background-color: #f2f2f2;
 }
 
 * {
@@ -21,6 +29,53 @@ a:hover {
   text-decoration: underline;
 }
 
+a:visited {
+  color: var(--font-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // dark
+    --background-color: #202124;
+    --button-background-color: #303134;
+    --font-color: #999da2;
+    --border-color: #5f6368;
+    --footer-background-color: #171717;
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html body{
+//     background-color: #202124;
+//   }
+
+
+//   body, body header li a {
+//     color: #999da2;
+//   }
+
+//   body main .search-box {
+//     border: 1px solid #5f6368;
+//     input{
+//       background-color: #202124;
+
+//       span {
+//         color: #999da2;
+//       }
+//     }
+//   }
+
+//   body main button {
+//     background-color: #303134;
+//     color: white;
+//   }
+
+//   body footer {
+//     background-color: #171717;
+//     color: #999da2;
+//   }
+// }
+
 main, header {
   padding: var(--padding-vertical) var(--padding-horizontal);
 }
@@ -37,11 +92,12 @@ body {
   min-height: 100vh;
   
   justify-content: center;
-  background-color: white;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 header {
-  > ul {
+  > nav > ul {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -49,7 +105,9 @@ header {
     gap: 12px;
 
     > li {
+      // --font-color: blue;
       font-size: 12px;
+      color: var(--font-color);
 
       // & + li {
       //   margin-left: 12px;
@@ -70,7 +128,7 @@ header a {
   display: inline-block;
   text-decoration: none;
 
-  color: #444;
+  color: var(--font-color);
 }
 
 main {
@@ -99,6 +157,7 @@ main {
     > input {
       margin: 0 12px;
       flex: 1;
+      background-color: var(--background-color);
 
       border: none;
     }
@@ -109,10 +168,11 @@ main {
     padding: 6px 12px;
     border-radius: 6px;
     border: 1px solid transparent;
-    background-color: #f8f9fa;
+    background-color: var(--button-background-color);
+    color: var(--font-color);
 
     &:hover {
-      border: 1px solid #dadce0;
+      border: 1px solid var(--border-color);
     }
   }
 }
@@ -120,7 +180,8 @@ main {
 footer {
   position: relative;
   z-index: 1;
-  background-color: #f2f2f2;
+  background-color: var(--footer-background-color);
+  color: var(--font-color);
   // margin-left: calc(var(--padding-horizontal) * (-1));
   // width: calc(100% + 2 * var(--padding-horizontal));
   

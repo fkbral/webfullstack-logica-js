@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="build/styles.css" />
+  </head>
+
+  <body class="bg-blue-400 w-full h-screen">
+    <main class="flex-col flex justify-center items-center p-4 h-full">
+      <h1 class="text-white text-2xl mb-4 font-medium">
+        Faça seu login no sistema
+      </h1>
+
+      <form class="bg-gray-100 flex-col flex p-4 rounded-lg w-11/12 max-w-md">
+        <label for="name">nome de usuário</label>
+        <input class="py-1 px-2 rounded-xl" type="text" id="name" />
+
+        <label for="email" class="mt-1">seu e-mail</label>
+        <input class="py-1 px-2 rounded-xl" type="email" id="email" />
+
+        <label for="password" class="mt-1">sua senha</label>
+        <input class="py-1 px-2 rounded-xl" type="password" id="password" />
+
+        <button
+          class="
+            bg-blue-500
+            hover:bg-blue-600
+            transition-colors
+            text-white
+            rounded-xl
+            mt-4
+            h-8
+          "
+        >
+          Cadastrar
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

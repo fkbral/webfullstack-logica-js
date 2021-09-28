@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+
+    <!-- <script>
+      function handleImageError() {
+        document.write("erro ao carregar imagem");
+      }
+    </script> -->
+  </head>
+  <body>
+    <picture>
+      <source
+        media="(max-width: 320px)"
+        srcset="assets/jpg-surfwave-140x90-2kb.jpg"
+      />
+      <source
+        media="(max-width: 425px)"
+        srcset="assets/jpg-surfwave-450x300-20kb.jpg"
+      />
+      <source
+        media="((max-width: 1799px) and (min-width: 960px))"
+        srcset="assets/jpg-surfwave-960x640-70kb.jpg"
+      />
+      <source
+        media="(min-width: 1800px)"
+        srcset="assets/jpg-surfwave-1850x1230-210kb.jpg"
+      />
+      <img
+        src="assets/jpg-surfwave-450x300-20kb.jpg"
+        alt="ondas"
+        onerror="handleImageError()"
+      />
+    </picture>
+  </body>
+</html>

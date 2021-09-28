@@ -1,6 +1,12 @@
 :root {
   --padding-horizontal: 30px;
   --padding-vertical: 18px;
+  --background-color: white;
+  --button-background-color: #f8f9fa;
+  --font-color: rgb(32, 33, 36);
+  --border-color: #dadce0;
+  --border-input-color: #dfe1e5;
+  --footer-background-color: #f2f2f2;
 }
 
 * {
@@ -20,6 +26,20 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+a:visited {
+  color: var(--font-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #202124;
+    --button-background-color: #303134;
+    --font-color: #999da2;
+    --border-color: #5f6368;
+    --footer-background-color: #171717;
+  }
 }
 
 main, header {
@@ -42,10 +62,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: white;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
-header > ul {
+header > nav > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,18 +80,19 @@ header > ul {
   gap: 12px;
 }
 
-header > ul > li {
+header > nav > ul > li {
   font-size: 12px;
+  color: var(--font-color);
 }
 
-header > ul > li:last-child span.material-icons {
+header > nav > ul > li:last-child span.material-icons {
   font-size: 32px;
 }
 
 header a {
   display: inline-block;
   text-decoration: none;
-  color: #444;
+  color: var(--font-color);
 }
 
 main {
@@ -117,6 +139,7 @@ main .search-box > input {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background-color: var(--background-color);
   border: none;
 }
 
@@ -125,17 +148,19 @@ main button {
   padding: 6px 12px;
   border-radius: 6px;
   border: 1px solid transparent;
-  background-color: #f8f9fa;
+  background-color: var(--button-background-color);
+  color: var(--font-color);
 }
 
 main button:hover {
-  border: 1px solid #dadce0;
+  border: 1px solid var(--border-color);
 }
 
 footer {
   position: relative;
   z-index: 1;
-  background-color: #f2f2f2;
+  background-color: var(--footer-background-color);
+  color: var(--font-color);
 }
 
 footer > div:first-child {
